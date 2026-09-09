@@ -370,14 +370,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/vars.scss";
+
 // Same height as a rendered small HeartbeatBar (beatHeight 16 * hoverScale 1.5,
 // plus the 4px the bar pads itself with above and below), so that mounting the
 // real bar does not shift the row.
 .heartbeat-placeholder {
     height: 32px;
 }
-
-@import "../assets/vars.scss";
 
 .small-padding {
     padding-left: 5px !important;

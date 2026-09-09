@@ -796,6 +796,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/vars.scss";
+
 // Placeholder rows shown while the monitor list is on its way. They take the
 // same room a real row does, so the list does not jump when it arrives.
 .monitor-list-skeleton {
@@ -843,8 +845,6 @@ export default {
         opacity: 0.45;
     }
 }
-
-@import "../assets/vars.scss";
 
 .shadow-box {
     height: calc(100vh - 150px);
