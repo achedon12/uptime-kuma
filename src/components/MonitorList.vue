@@ -102,7 +102,12 @@
         >
             <!-- The list is rendered before the server has sent it, so an empty
                  list means "still arriving" until it actually has. -->
-            <div v-if="!$root.monitorListLoaded" class="monitor-list-skeleton" :aria-label="$t('Loading...')" aria-busy="true">
+            <div
+                v-if="!$root.monitorListLoaded"
+                class="monitor-list-skeleton"
+                :aria-label="$t('Loading...')"
+                aria-busy="true"
+            >
                 <div v-for="n in 8" :key="n" class="skeleton-row">
                     <div class="skeleton-pill" />
                     <div class="skeleton-name" />
@@ -110,10 +115,7 @@
                 </div>
             </div>
 
-            <div
-                v-else-if="Object.keys($root.monitorList).length === 0"
-                class="text-center mt-3"
-            >
+            <div v-else-if="Object.keys($root.monitorList).length === 0" class="text-center mt-3">
                 {{ $t("No Monitors, please") }}
                 <router-link to="/add">{{ $t("add one") }}</router-link>
             </div>
@@ -423,8 +425,8 @@ export default {
             // a moment and sent together rather than one round trip per row.
             const flush = () => {
                 flushTimer = null;
-                const batch = [ ...pending ].slice(0, 200);
-                pending = new Set([ ...pending ].slice(200));
+                const batch = [...pending].slice(0, 200);
+                pending = new Set([...pending].slice(200));
                 if (batch.length > 0) {
                     this.$root.requestMonitorData(batch);
                 }
@@ -841,7 +843,6 @@ export default {
         opacity: 0.45;
     }
 }
-
 
 @import "../assets/vars.scss";
 

@@ -11,29 +11,46 @@
                 <div class="row">
                     <div class="col">
                         <h3>{{ $t("Up") }}</h3>
-                        <span class="num" :class="!$root.monitorListLoaded || $root.stats.up === 0 ? 'text-secondary' : ''">
+                        <span
+                            class="num"
+                            :class="!$root.monitorListLoaded || $root.stats.up === 0 ? 'text-secondary' : ''"
+                        >
                             {{ $root.monitorListLoaded ? $root.stats.up : "&mdash;" }}
                         </span>
                     </div>
                     <div class="col">
                         <h3>{{ $t("Down") }}</h3>
-                        <span class="num" :class="$root.monitorListLoaded && $root.stats.down > 0 ? 'text-danger' : 'text-secondary'">
+                        <span
+                            class="num"
+                            :class="$root.monitorListLoaded && $root.stats.down > 0 ? 'text-danger' : 'text-secondary'"
+                        >
                             {{ $root.monitorListLoaded ? $root.stats.down : "&mdash;" }}
                         </span>
                     </div>
                     <div class="col">
                         <h3>{{ $t("Maintenance") }}</h3>
-                        <span class="num" :class="$root.monitorListLoaded && $root.stats.maintenance > 0 ? 'text-maintenance' : 'text-secondary'">
+                        <span
+                            class="num"
+                            :class="
+                                $root.monitorListLoaded && $root.stats.maintenance > 0
+                                    ? 'text-maintenance'
+                                    : 'text-secondary'
+                            "
+                        >
                             {{ $root.monitorListLoaded ? $root.stats.maintenance : "&mdash;" }}
                         </span>
                     </div>
                     <div class="col">
                         <h3>{{ $t("Unknown") }}</h3>
-                        <span class="num text-secondary">{{ $root.monitorListLoaded ? $root.stats.unknown : "&mdash;" }}</span>
+                        <span class="num text-secondary">
+                            {{ $root.monitorListLoaded ? $root.stats.unknown : "&mdash;" }}
+                        </span>
                     </div>
                     <div class="col">
                         <h3>{{ $t("pauseDashboardHome") }}</h3>
-                        <span class="num text-secondary">{{ $root.monitorListLoaded ? $root.stats.pause : "&mdash;" }}</span>
+                        <span class="num text-secondary">
+                            {{ $root.monitorListLoaded ? $root.stats.pause : "&mdash;" }}
+                        </span>
                     </div>
                 </div>
             </div>

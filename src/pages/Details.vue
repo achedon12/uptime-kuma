@@ -657,7 +657,7 @@ export default {
                 return;
             }
 
-            const ids = [ this.monitor.id, ...(this.monitor.childrenIDs || []) ];
+            const ids = [this.monitor.id, ...(this.monitor.childrenIDs || [])];
             this.$root.requestMonitorData(ids);
         },
         /**
